@@ -1,6 +1,7 @@
 # GraphQL Mock Server
 
 ## Getting started
+### Installation Wizard
 ```
 npm init -y
 
@@ -10,14 +11,23 @@ npm install @graphql-codegen/introspection --save-dev
 
 npm install typescript ts-node --save-dev
 npx tsc --init
+
+# Advanced option for logging HTTP request
+npm install express apollo-server-express
 ```
 
-## Run the server
+### Run the server
 ```
 npm run mock-server
 ```
 
-## Create GraphQL schema
+### Access from cURL
+```
+curl -X POST -H 'Content-Type: application/json' http://localhost:4000/graphql -d '{"query":"query { books { title } }"}'
+```
+You have to add the content-type header, otherwise will see 'POST body missing. Did you forget use body-parser middleware?' as error.
+
+### Create GraphQL schema
 ```
 npx graphql-codegen init
 ? What type of application are you building? Backend - API or server

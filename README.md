@@ -10,6 +10,7 @@ npm install @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/ty
 npm install @graphql-codegen/introspection --save-dev
 
 npm install typescript ts-node --save-dev
+npm install ts-node-dev --save-dev
 npx tsc --init
 
 # Advanced option for logging HTTP request

@@ -1,11 +1,11 @@
 // import { ApolloServer } from "apollo-server";
 import { ApolloServer } from "apollo-server-express";
 import express, { NextFunction, Request, Response } from "express";
-import { mocks } from "./graphql/mock";
-import { resolvers } from "./graphql/resolvers";
+import { context, resolvers } from "./graphql/resolvers";
 import { typeDefs } from "./graphql/schema";
 
-const server = new ApolloServer({ typeDefs, resolvers, mocks });
+const server = new ApolloServer({ typeDefs, resolvers, context });
+// const server = new ApolloServer({ typeDefs, resolvers, context, mocks });
 
 const app = express();
 
